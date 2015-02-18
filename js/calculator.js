@@ -1,5 +1,3 @@
-'use strict';
-
 var Calculator = {
 
   display: document.querySelector('#display div'),
@@ -21,8 +19,7 @@ var Calculator = {
     var screenWidth = this.display.parentNode.offsetWidth - 60;
     var valWidth = this.display.offsetWidth;
     var scaleFactor = Math.min(1, screenWidth / valWidth);
-    //this.display.style.MozTransform = 'scale(' + scaleFactor + ')';
-    // Work around for bug #989403
+  
     this.display.style.fontSize = 5.5 * scaleFactor + 'rem';
   },
 
@@ -97,7 +94,6 @@ var Calculator = {
     var tempResult = 0,
         result = parseFloat(this.result),
         currentInput = parseFloat(this.currentInput);
-    // Can't use eval here since this will be a packaged app.
     switch (this.operationToBeApplied) {
       case '+':
         tempResult = result + currentInput;
@@ -147,7 +143,6 @@ var Calculator = {
     this.updateDisplay();
   },
 
-  // handles the operator highlight
   removeCurrentOperationEle: function removeCurrentOperationEle() {
     if (this.currentOperationEle) {
       this.currentOperationEle.classList.remove('active');
@@ -194,7 +189,6 @@ var Calculator = {
   }
 };
 
-// String concatenation then number subtraction
 Calculator.maxDisplayableValue = '1e' + Calculator.significantDigits - 1;
 
 window.addEventListener('load', function load(evt) {
