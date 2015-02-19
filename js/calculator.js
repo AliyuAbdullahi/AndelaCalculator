@@ -1,6 +1,6 @@
-var Calculator = {
+var Calculator = {      // create object and add properties
 
-  display: document.querySelector('#display div'),
+  display: document.querySelector('#display div'), 
   significantDigits: 9,
   currentOperationEle: null,
   result: 0,
@@ -9,7 +9,7 @@ var Calculator = {
   inputDigits: 0,
   decimalMark: false,
 
-  updateDisplay: function updateDisplay() {
+  updateDisplay: function updateDisplay() {  // set the display font size and screen size
     var value = this.currentInput || this.result.toString();
 
     var infinite = new RegExp((1 / 0) + '', 'g');
@@ -23,7 +23,7 @@ var Calculator = {
     this.display.style.fontSize = 5.5 * scaleFactor + 'rem';
   },
 
-  appendDigit: function appendDigit(value) {
+  appendDigit: function appendDigit(value) {   //append digits to the display
     if (this.inputDigits + 1 > this.significantDigits ||
         this.currentInput === '0' && value === '0') {
       return;
@@ -51,7 +51,7 @@ var Calculator = {
     this.updateDisplay();
   },
 
-  appendOperator: function appendOperator(value) {
+  appendOperator: function appendOperator(value) {  /*append operator to digit to perform operation if digits exist*/
     this.decimalMark = false;
     if (this.operationToBeApplied && this.currentInput) {
       this.calculate();
@@ -81,7 +81,7 @@ var Calculator = {
     this.inputDigits = 0;
   },
 
-  backSpace: function backSpace() {
+  backSpace: function backSpace() {  /* backspacing that is pressing the Clear(c) button*/
     this.currentInput = '';
     this.operationToBeApplied = '';
     this.result = 0;
@@ -90,7 +90,7 @@ var Calculator = {
     this.updateDisplay();
   },
 
-  calculate: function calculate() {
+  calculate: function calculate() {   /* perform calculation based on operator and cumulate result using acumulator*/
     var tempResult = 0,
         result = parseFloat(this.result),
         currentInput = parseFloat(this.currentInput);
@@ -125,7 +125,7 @@ var Calculator = {
     this.updateDisplay();
   },
 
-  init: function init() {
+  init: function init() {                                      /* initialise Listener and update display*/
     this.display.style.lineHeight = + this.display.offsetHeight + "px";
     document.addEventListener('mousedown', this);
     document.addEventListener('touchstart', function(evt){
@@ -143,14 +143,14 @@ var Calculator = {
     this.updateDisplay();
   },
 
-  removeCurrentOperationEle: function removeCurrentOperationEle() {
+  removeCurrentOperationEle: function removeCurrentOperationEle() {    /*remove current operatoin(operator) element*/ 
     if (this.currentOperationEle) {
       this.currentOperationEle.classList.remove('active');
       this.currentOperationEle = null;
     }
   },
 
-  handleEvent: function handleEvent(evt) {
+  handleEvent: function handleEvent(evt) {   /*handle the operations such as +,-... and remove operation value onRecieve operator*/
     var target = evt.target;
     var value = target.value;
     switch (target.dataset.type) {
@@ -189,9 +189,9 @@ var Calculator = {
   }
 };
 
-Calculator.maxDisplayableValue = '1e' + Calculator.significantDigits - 1;
+Calculator.maxDisplayableValue = '1e' + Calculator.significantDigits - 1; // set screen width limit
 
-window.addEventListener('load', function load(evt) {
+window.addEventListener('load', function load(evt) {   /* start calculator on window load*/
   window.removeEventListener('load', load);
   Calculator.init();
 });
