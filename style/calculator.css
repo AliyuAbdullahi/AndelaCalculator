@@ -42,7 +42,6 @@ font-color: red;
 }
 
 input {
-  /* text nodes in the source code affect the layout */
   margin-right: -2px;
   background: transparent;
   
