@@ -20,7 +20,7 @@ var Calculator = {      // create object and add properties
     var valWidth = this.display.offsetWidth;
     var scaleFactor = Math.min(1, screenWidth / valWidth);
   
-    this.display.style.fontSize = 5.5 * scaleFactor + 'rem';
+    this.display.style.fontSize = 5.5 * scaleFactor +'rem';
   },
 
   appendDigit: function appendDigit(value) {   //append digits to the display
