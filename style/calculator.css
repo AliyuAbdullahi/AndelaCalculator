@@ -1,18 +1,15 @@
 html, body {
   margin: 0;
-    margin: 20px auto;
   padding: 0;
 font-color: red;
-  height: 70%;
-    width:70%;
+  height: 100%;
   line-height: 100%;
 
-  position:relative;
-    box-shadow: rgba(0,0,0,0.2) 10px 10px #626060;
+  overflow: hidden;
 
   font-size: 5px;
   font-weight: normal;
-  background-color: #dcd7d6;
+  background-color: #CD3423;
 }
 
 .x-row{
@@ -45,6 +42,7 @@ font-color: red;
 }
 
 input {
+  /* text nodes in the source code affect the layout */
   margin-right: -2px;
   background: transparent;
   
@@ -61,6 +59,7 @@ input[disabled] {
   font-size: 3rem;
   font-weight: 50;
   color: #e7e7e7;
+    box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
   border-top: .1rem solid #191919;
   border-right: .1rem solid #191919;
 }
@@ -133,7 +132,7 @@ input::-moz-focus-inner {
 /* Result Display */
 #display {
   color: white;
-  background-color: #587fa1;
+  background-color: #587ff4;
 
   height: 15.6rem;
   line-height: 15.6rem;
@@ -268,8 +267,9 @@ input::-moz-focus-inner {
   }
 }
 
-
+input:active,
 input.active,
 .active {
   background-color: #008EAB;
 }
+/*improved ui*/
