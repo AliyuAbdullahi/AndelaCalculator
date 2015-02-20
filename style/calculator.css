@@ -1,15 +1,18 @@
 html, body {
   margin: 0;
+    float:center;
   padding: 0;
 font-color: red;
-  height: 100%;
+  height: 70%;
+    width:70%;
   line-height: 100%;
 
-  overflow: hidden;
+  position:relative;
+    box-shadow: rgba(0,0,0,0.2) 10px 10px #626060;
 
   font-size: 5px;
   font-weight: normal;
-  background-color: #CD3423;
+  background-color: #dcd7d6;
 }
 
 .x-row{
@@ -131,7 +134,7 @@ input::-moz-focus-inner {
 /* Result Display */
 #display {
   color: white;
-  background-color: #587ff4;
+  background-color: #587fa1;
 
   height: 15.6rem;
   line-height: 15.6rem;
