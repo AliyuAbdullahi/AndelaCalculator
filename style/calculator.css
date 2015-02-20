@@ -120,7 +120,7 @@ input[value="÷"]{
 
 input[value="="]{
   background: url(images/icon_equal.png) center no-repeat;
-  color: transparent;
+  color:  transparent;
 }
 
 input::-moz-focus-inner {
