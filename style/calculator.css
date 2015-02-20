@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-    float:center;
+ float:center;
   padding: 0;
 font-color: red;
   height: 70%;
@@ -61,7 +61,6 @@ input[disabled] {
   font-size: 3rem;
   font-weight: 50;
   color: #e7e7e7;
-    box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
   border-top: .1rem solid #191919;
   border-right: .1rem solid #191919;
 }
@@ -269,7 +268,7 @@ input::-moz-focus-inner {
   }
 }
 
-input:active,
+
 input.active,
 .active {
   background-color: #008EAB;
