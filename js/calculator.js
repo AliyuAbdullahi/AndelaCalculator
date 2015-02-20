@@ -189,7 +189,7 @@ var Calculator = {      // create object and add properties
   }
 };
 
-Calculator.maxDisplayableValue = '1e' + Calculator.significantDigits - 1; // set screen width limit
+Calculator.maxDisplayableValue = '1e' + Calculator.significantDigits - 1; // concatinating string and number(screen limit)
 
 window.addEventListener('load', function load(evt) {   /* start calculator on window load*/
   window.removeEventListener('load', load);
